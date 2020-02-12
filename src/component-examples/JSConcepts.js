@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const JSConcepts = (props) => {
-  const user = props.user;
+const JSConcepts = ({ user }) => {
   let userName = user.name;
   userName = user.getName();
   const stringSingleQuotes = 'This is a string';
