@@ -5,7 +5,8 @@ class AddingMachine extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentNum: 0
+      startNum: props.startNum,
+      currentNum: props.startNum
     };
   }
 
@@ -17,9 +18,6 @@ class AddingMachine extends React.Component {
 
   render() {
     let whee;
-
-    const startNum = this.props.startNum;
-
     if (this.state.currentNum % 10 === 0) {
       whee = <div>Whee!</div>;
     }
@@ -27,8 +25,8 @@ class AddingMachine extends React.Component {
     return (
       <div style={{ border: "1px solid black", margin: "2rem" }}>
         <header>{this.props.children}</header>
-        <div>We started with {this.props.startNum}</div>
-        <div>We're now at {this.props.startNum + this.state.currentNum}</div>
+        <div>We started with {this.state.startNum}</div>
+        <div>We're now at {this.state.currentNum}</div>
         <button onClick={this.addOne}>Click me to add 1</button>
         {whee}
       </div>
